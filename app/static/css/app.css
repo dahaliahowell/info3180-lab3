@@ -1,3 +1,67 @@
 body {
     padding-top: 5rem;
 }
+
+.form-heading {
+    font-weight: bold;
+}
+
+.required {
+    color: rgb(235, 57, 57);
+    font-weight: bold;
+}
+
+.form-div {
+    margin-bottom: 20px;
+} 
+
+button {
+    background-color: blue;
+    color: #ffffff;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
+.formfield {
+    padding: 10px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 40px;
+}
+
+.area {
+    width: 400px;
+    height: 150px;
+}
+
+.hr {
+    border-top: 1px solid gray;
+}
+
+#instructions {
+    margin-bottom: 30px;
+}
+
+.flashes {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.flash {
+    border: 1px solid #45b3e0;
+    background-color: #c9e9f6;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+    margin-bottom: 20px;
+}

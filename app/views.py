@@ -10,6 +10,9 @@ from flask import render_template, request, redirect, url_for, flash
 
 from .forms import ContactForm
 
+from app import mail
+from flask_mail import Message
+
 ###
 # Routing for your application.
 ###
@@ -29,6 +32,23 @@ def about():
 def contact():
     """Render the website's contact form page."""
     contactForm = ContactForm()
+    if request.method == 'POST':
+        if contactForm.validate_on_submit():
+
+            name = contactForm.name.data
+            email = contactForm.email.data
+            subject = contactForm.subject.data
+            message = contactForm.message.data
+
+            msg = Message(subject, sender=(name, email), recipients=['to@example.com'], body=message)
+            
+            mail.send(msg)
+
+            flash('You have successfully contacted the site owners!', 'success')
+            return redirect(url_for('home'))
+
+        flash_errors(contactForm)
+
     return render_template('contact.html', form=contactForm)
 
 
